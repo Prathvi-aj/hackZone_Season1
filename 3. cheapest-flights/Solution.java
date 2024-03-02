@@ -13,7 +13,7 @@ public class Solution {
 
         // Test case 3
         int[][] flights3 = {{0, 1, 100}, {1, 2, 100}, {0, 2, 500}};
-        System.out.println("Actual: " + findCheapestPrice(3, flights3, 0, 2, 0) + ", Expected: 500");
+        System.out.println("Actual: " + findCheapestPrice(3, flights3, 0, 2, 2) + ", Expected: 500");
     }
 
     public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
@@ -53,7 +53,7 @@ public class Solution {
     			}
                 
             }
-    		return flightPrice;
+    		return flightMinPrice;
     		
     	}
     	
