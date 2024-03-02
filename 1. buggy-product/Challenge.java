@@ -8,10 +8,17 @@ public class Challenge {
      * Don't change the code, besides the input to the function.
      */
     public static void main(String[] args) throws Exception {
-        lastBugFreeVersion(new int[]{0, 0, 1, 1, 1});
+        lastBugFreeVersion(new int[]{1, 1, 1, 1, 1});
     }
 
     public static int lastBugFreeVersion(int[] versions) {
         // Your implementation here
+    	for(int i=versions.length-1;i>=0;i--) {
+    		if(versions[i]==0) {
+    			return i;
+    		}
+    	}
+    	System.out.println("All versions are Buggy");
+    	return -1;
     }
 }

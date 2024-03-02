@@ -21,6 +21,39 @@ public class Challenge {
      * Add your implementation here.
      */
     private static void cleanRooms(RobotApi api) {
-        // TODO add code here
+        while (true) {
+            cleanCurrentRoom(api);
+
+            if (!api.isBarrierAhead()) {
+                api.move();
+            } else {
+                turnAround(api);
+                if (api.isBarrierAhead()) {
+                    break;
+                } else {
+                    api.move();
+                }
+            }
+        }
     }
+
+    private static void cleanCurrentRoom(RobotApi api) {
+        while (!api.isBarrierAhead()) {
+            api.move();
+        }
+
+        turnAround(api);
+
+        if (!api.isBarrierAhead()) {
+            api.move();
+            turnAround(api);
+        }
+    }
+
+    private static void turnAround(RobotApi api) {
+        api.turnLeft();
+        api.turnLeft();
+    }
+
+   
 }

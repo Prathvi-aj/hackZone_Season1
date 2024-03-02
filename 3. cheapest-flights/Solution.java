@@ -29,14 +29,13 @@ public class Solution {
             String key = source + "-" + destination;
             flightMap.put(key, value);
         }
-        
-        int flightMinPrice=0;
     
     	
     	if(k==0 && flightMap.containsKey(src+"-"+dst)) {
     		return flightMap.get(src+"-"+dst);
     	}
     	else if(k>0){
+    		int flightMinPrice=0;
     		for (Map.Entry<String, Integer> entry : flightMap.entrySet()) {
     			if(k==-1) {
     				break;
